@@ -1421,11 +1421,13 @@ static void do_app(void)
 			number = fz_maxi(number, 1);
 			while (number--)
 				currentpage = fz_previous_page(ctx, doc, currentpage);
+			scroll_y = canvas_h;
 			break;
 		case '.': case KEY_PAGE_DOWN: case MOUSE_SIDE_2:
 			number = fz_maxi(number, 1);
 			while (number--)
 				currentpage = fz_next_page(ctx, doc, currentpage);
+			scroll_y = 0;
 			break;
 
 		case 'A':
